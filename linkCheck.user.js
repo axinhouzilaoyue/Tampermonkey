@@ -18,7 +18,7 @@
     'use strict';
 
     // --- 配置 ---
-    const CHECK_TIMEOUT = 10000;
+    const CHECK_TIMEOUT = 7000;
     const CONCURRENT_CHECKS = 5;
     const MAX_RETRIES = 1;
     const RETRY_DELAY = 500;
