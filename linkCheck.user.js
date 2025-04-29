@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         链接有效性检测器 (处理405、404错误，页面标记)
+// @name         链接有效性检测器 (页面标记)
 // @namespace    http://tampermonkey.net/
 // @version      1.4
 // @description  Adds a button to check links, retries failed ones, falls back to GET on 405, marks broken links with an icon, shows log.
@@ -102,7 +102,7 @@
                     timeout: CHECK_TIMEOUT,
                     onload: function(response) {
                         // 如果是 HEAD 且返回 405 或 404，则尝试 GET
-                        if (method === 'HEAD' && (response.status === 405 || response.status === 404)) {
+                        if (method === 'HEAD' && (response.status === 405 || (response.status >= 500 && response.status < 600))) {
                             console.log(`[链接检测] HEAD 收到 ${response.status}: ${url}, 尝试使用 GET...`);
                             resolveRequest({ status: 'retry_with_get' });
                             return; // 不再处理此 onload
