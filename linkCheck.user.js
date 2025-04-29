@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         链接有效性检测器 (页面标记)-增强版
-// @namespace    http://tampermonkey.net
+// @namespace    http://tampermonkey.net/
 // @version      1.5
 // @description  增强版链接检测器：强制样式应用，改进DOM选择，支持表格内外所有链接的标记
 // @author       Axin & gemini 2.5 pro & Claude
@@ -149,8 +149,8 @@
                     url: url,
                     timeout: CHECK_TIMEOUT,
                     onload: function(response) {
-                        // 如果是 HEAD 且返回 405 或 404，则尝试 GET
-                        if (method === 'HEAD' && (response.status === 405 || response.status === 404 || (response.status >= 500 && response.status < 600))) {
+                        // 如果是 HEAD 且返回 405 或 404 或 403，则尝试 GET
+                        if (method === 'HEAD' && (response.status === 405 || response.status === 404 || response.status === 403 || (response.status >= 500 && response.status < 600))) {
                             console.log(`[链接检测] HEAD 收到 ${response.status}: ${url}, 尝试使用 GET...`);
                             resolveRequest({ status: 'retry_with_get' });
                             return; // 不再处理此 onload
