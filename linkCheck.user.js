@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         链接有效性检测器 (页面标记)-增强版
-// @namespace    http://tampermonkey.net/
+// @namespace    http://tampermonkey.net
 // @version      1.5
 // @description  增强版链接检测器：强制样式应用，改进DOM选择，支持表格内外所有链接的标记
 // @author       Axin & gemini 2.5 pro & Claude
