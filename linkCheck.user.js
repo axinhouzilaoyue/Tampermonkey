@@ -246,7 +246,7 @@
             finishCheck(); return;
         }
 
-        showToast(`发现 ${totalLinks} 个有效链接，开始检测 (将对405、404错误尝试GET)...`, 'info', 5000);
+        showToast(`发现 ${totalLinks} 个有效链接，开始检测...`, 'info', 5000);
         button.title = `检测中: 0/${totalLinks} (失效: 0)`;
         processQueue();
     }
