@@ -102,7 +102,7 @@
                     timeout: CHECK_TIMEOUT,
                     onload: function(response) {
                         // 如果是 HEAD 且返回 405 或 404，则尝试 GET
-                        if (method === 'HEAD' && (response.status === 405 || (response.status >= 500 && response.status < 600))) {
+                        if (method === 'HEAD' && (response.status === 405 || response.status === 404 || (response.status >= 500 && response.status < 600))) {
                             console.log(`[链接检测] HEAD 收到 ${response.status}: ${url}, 尝试使用 GET...`);
                             resolveRequest({ status: 'retry_with_get' });
                             return; // 不再处理此 onload
