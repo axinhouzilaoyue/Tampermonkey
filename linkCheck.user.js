@@ -1,4 +1,5 @@
 // ==UserScript==
+// @license      MIT
 // @name         链接有效性检测器 (页面标记)-增强版
 // @namespace    http://tampermonkey.net/
 // @version      1.5
